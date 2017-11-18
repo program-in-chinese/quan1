@@ -3,7 +3,7 @@ package 圈1;
 import java.util.Scanner;
 
 /**
- * 主程序
+ * 主程序. 参考了"两周自制脚本语言"一书的实现.
  */
 public class 圈1 {
 

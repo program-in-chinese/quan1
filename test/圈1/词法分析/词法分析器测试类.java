@@ -1,5 +1,6 @@
 package 圈1.词法分析;
 
+import java.util.List;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -35,7 +36,19 @@ public class 词法分析器测试类 {
   @Test
   public void 分析() {
     assertEquals(1, 词法分析器类.取Token列表("1").size());
-    assertEquals(3, 词法分析器类.取Token列表("1+2").size());
-    // TODO: 测试第二个Token
+    
+    List<Token> token列表 = 词法分析器类.取Token列表("1+2");
+    assertEquals(3, token列表.size());
+    assertEquals(1, token列表.get(0).取值());
+    assertEquals("+", token列表.get(1).取文本());
+    assertEquals(2, token列表.get(2).取值());
+
+    token列表 = 词法分析器类.取Token列表("年龄 = 去年年龄 + 1");
+    assertEquals(5, token列表.size());
+    assertEquals("年龄", token列表.get(0).取文本());
+    assertEquals("=", token列表.get(1).取文本());
+    assertEquals("去年年龄", token列表.get(2).取文本());
+    assertEquals("+", token列表.get(3).取文本());
+    assertEquals(1, token列表.get(4).取值());
   }
 }

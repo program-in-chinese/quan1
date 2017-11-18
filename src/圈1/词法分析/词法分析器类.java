@@ -47,6 +47,8 @@ public class 词法分析器类 {
       if (匹配器.group(2) == null) {
         if (匹配器.group(3) != null) {
           token = new 数Token类(Integer.parseInt(匹配字符串));
+        } else {
+          token = new 标识符Token类(匹配字符串);
         }
       }
     }
