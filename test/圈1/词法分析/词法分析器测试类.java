@@ -8,10 +8,6 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-/**
- *
- * @author xuanwu
- */
 public class 词法分析器测试类 {
   
   public 词法分析器测试类() {
