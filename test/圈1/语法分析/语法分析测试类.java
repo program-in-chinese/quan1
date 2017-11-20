@@ -3,13 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package 圈1.词法分析;
+package 圈1.语法分析;
 
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import 圈1.词法分析.词法分析器类;
 import static org.junit.Assert.*;
 import 圈1.语法分析.数节点类;
 import 圈1.语法分析.树节点接口;
