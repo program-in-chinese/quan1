@@ -16,6 +16,22 @@ public class 词法分析器类 {
           + "(\"(\\\\\"|\\\\\\\\|\\\\n|[^\"])*\")|" + 常量_正则表达式_标识符 + "|==|<=|>=|&&|\\|\\||\\p{Punct})?";
   private static final Pattern 常量_模式_全部 = Pattern.compile(常量_正则表达式_全部);
 
+  private final List<词类> 词列表;
+  
+  public 词法分析器类(String 输入) {
+    词列表 = 取词列表(输入);
+  }
+  
+  public 词类 弹出() {
+    // TODO: 取代null为结束符
+    return 词列表.isEmpty() ? null : 词列表.remove(0);
+  }
+  
+  public 词类 一瞧() {
+    // TODO: 取代null为结束符
+    return 词列表.isEmpty() ? null : 词列表.get(0);
+  }
+  
   public static List<词类> 取词列表(String 输入) {
     List<词类> 词列表 = new ArrayList<>();
     String[] 分行 = 输入.split("\n");
