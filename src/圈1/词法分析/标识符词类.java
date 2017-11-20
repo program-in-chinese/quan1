@@ -1,10 +1,10 @@
 package 圈1.词法分析;
 
-public class 标识符Token类 extends Token {
+public class 标识符词类 extends 词类 {
 
   private final String 名称;
 
-  protected 标识符Token类(String id) {
+  protected 标识符词类(String id) {
     super();
     名称 = id;
   }

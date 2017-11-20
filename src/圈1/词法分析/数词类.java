@@ -1,10 +1,10 @@
 package 圈1.词法分析;
 
-public class 数Token类 extends Token {
+public class 数词类 extends 词类 {
 
   private final int 值;
 
-  protected 数Token类(int 数值) {
+  protected 数词类(int 数值) {
     super();
     值 = 数值;
   }

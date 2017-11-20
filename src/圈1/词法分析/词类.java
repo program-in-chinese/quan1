@@ -1,6 +1,6 @@
 package 圈1.词法分析;
 
-public abstract class Token {
+public abstract class 词类 {
 
   public boolean 是标识符() {
     return false;
@@ -11,7 +11,7 @@ public abstract class Token {
   }
 
   public int 取值() {
-    throw new 圈1例外类("不是数Token");
+    throw new 圈1例外类("不是数词");
   }
 
   public String 取文本() {

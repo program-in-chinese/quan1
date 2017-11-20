@@ -16,8 +16,8 @@ public class 词法分析器类 {
           + "(\"(\\\\\"|\\\\\\\\|\\\\n|[^\"])*\")|" + 常量_正则表达式_标识符 + "|==|<=|>=|&&|\\|\\||\\p{Punct})?";
   private static final Pattern 常量_模式_全部 = Pattern.compile(常量_正则表达式_全部);
 
-  public static List<Token> 取Token列表(String 输入) {
-    List<Token> token列表 = new ArrayList<>();
+  public static List<词类> 取词列表(String 输入) {
+    List<词类> 词列表 = new ArrayList<>();
     String[] 分行 = 输入.split("\n");
     for (String 行 : 分行) {
       Matcher 匹配器 = 常量_模式_全部.matcher(行);
@@ -26,18 +26,18 @@ public class 词法分析器类 {
       while (开始位置 < 结束位置) {
         匹配器.region(开始位置, 结束位置);
         if (匹配器.lookingAt()) {
-          token列表.add(取Token(匹配器));
+          词列表.add(取词(匹配器));
           开始位置 = 匹配器.end();
         } else {
           // TODO: 抛例外
         }
       }
     }
-    return token列表;
+    return 词列表;
   }
 
-  protected static Token 取Token(Matcher 匹配器) {
-    Token token = null;
+  protected static 词类 取词(Matcher 匹配器) {
+    词类 词 = null;
     String 匹配字符串 = 匹配器.group(1);
     
     // 如果不是空格
@@ -46,12 +46,12 @@ public class 词法分析器类 {
       // 如果不是注释 (// 开头)
       if (匹配器.group(2) == null) {
         if (匹配器.group(3) != null) {
-          token = new 数Token类(Integer.parseInt(匹配字符串));
+          词 = new 数词类(Integer.parseInt(匹配字符串));
         } else {
-          token = new 标识符Token类(匹配字符串);
+          词 = new 标识符词类(匹配字符串);
         }
       }
     }
-    return token;
+    return 词;
   }
 }
