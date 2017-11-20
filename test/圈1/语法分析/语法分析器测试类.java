@@ -20,9 +20,9 @@ import 圈1.语法分析.语法分析器类;
  *
  * @author xuanwu
  */
-public class 语法分析测试类 {
+public class 语法分析器测试类 {
   
-  public 语法分析测试类() {
+  public 语法分析器测试类() {
   }
   
   @BeforeClass
